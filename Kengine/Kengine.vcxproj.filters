@@ -21,7 +21,7 @@
     <ClCompile Include="app\window.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="graphics\Renderer.cpp">
+    <ClCompile Include="player\Player.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -29,7 +29,7 @@
     <ClInclude Include="app\window.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="graphics\renderer.h">
+    <ClInclude Include="player\Player.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

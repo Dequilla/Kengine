@@ -79,7 +79,7 @@
     </ClCompile>
     <Link>
       <AdditionalLibraryDirectories>$(SolutionDir)/lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>sfml-window.lib;sfml-system.lib;sfml-graphics.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>sfml-window-d.lib;sfml-system-d.lib;sfml-graphics-d.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
@@ -117,12 +117,12 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="app\window.cpp" />
-    <ClCompile Include="graphics\Renderer.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="player\Player.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="app\window.h" />
-    <ClInclude Include="graphics\renderer.h" />
+    <ClInclude Include="player\Player.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

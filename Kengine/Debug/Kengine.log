@@ -1,15 +1,15 @@
-﻿Build started 2016-01-22 12:01:54.
+﻿Build started 2016-01-29 11:13:11.
      1>Project "C:\Users\user\Documents\Kengine\Kengine\Kengine.vcxproj" on node 2 (Build target(s)).
      1>ClCompile:
          D:\Microsoft Visual Studio\VC\bin\CL.exe /c /IC:\Users\user\Documents\Kengine\/include /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"Debug\\" /Fd"Debug\vc140.pdb" /Gd /TP /analyze- /errorReport:prompt main.cpp
          main.cpp
        Link:
-         D:\Microsoft Visual Studio\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\user\Documents\Kengine\Debug\Kengine.exe" /INCREMENTAL /NOLOGO /LIBPATH:C:\Users\user\Documents\Kengine\/lib "sfml-window.lib" "sfml-system.lib" "sfml-graphics.lib" kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG:FASTLINK /PDB:"C:\Users\user\Documents\Kengine\Debug\Kengine.pdb" /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\user\Documents\Kengine\Debug\Kengine.lib" /MACHINE:X86 Debug\window.obj
-         Debug\Renderer.obj
+         D:\Microsoft Visual Studio\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\user\Documents\Kengine\Debug\Kengine.exe" /INCREMENTAL /NOLOGO /LIBPATH:C:\Users\user\Documents\Kengine\/lib "sfml-window-d.lib" "sfml-system-d.lib" "sfml-graphics-d.lib" kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG:FASTLINK /PDB:"C:\Users\user\Documents\Kengine\Debug\Kengine.pdb" /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\user\Documents\Kengine\Debug\Kengine.lib" /MACHINE:X86 Debug\window.obj
          Debug\main.obj
+         Debug\Player.obj
          Kengine.vcxproj -> C:\Users\user\Documents\Kengine\Debug\Kengine.exe
      1>Done Building Project "C:\Users\user\Documents\Kengine\Kengine\Kengine.vcxproj" (Build target(s)).
 
 Build succeeded.
 
-Time Elapsed 00:00:01.41
+Time Elapsed 00:00:01.44
