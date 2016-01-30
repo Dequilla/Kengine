@@ -1,1 +1,2 @@
 * Texture and sprites: http://www.sfml-dev.org/tutorials/2.0/graphics-sprite.php
+* Look up a proper game loop and try to integrate.

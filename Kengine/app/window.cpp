@@ -1,6 +1,6 @@
 #include "window.h"
 
-Window::Window(int width, int height, std::string title)
+kengine::Window::Window(int width, int height, std::string title)
 {
 	m_width = width;
 	m_height = height;
@@ -8,12 +8,12 @@ Window::Window(int width, int height, std::string title)
 	sf::Window::create(sf::VideoMode(m_width, m_height), m_title.c_str());
 }
 
-Window::~Window()
+kengine::Window::~Window()
 {
 	sf::Window::close();
 }
 
-void Window::windowEvents()
+void kengine::Window::windowEvents()
 {
 	sf::Event event;
 	while (this->pollEvent(event))

@@ -6,11 +6,11 @@
 int main()
 {
 	
-	
-	Window window(800, 600, "BAJS");
-	Player player("images/test.png", 1, 1);
+	kengine::Window window(800, 600, "BAJS");
+	kengine::Player player("images/test.png", 1, 1);
+	player.setSize(100, 100);
 
-	
+	sf::Clock deltaClock;
 
 	while (window.isOpen())
 	{
@@ -20,7 +20,9 @@ int main()
 		window.draw(player.getPlayerSprite());
 		window.display();	
 
-		std::cout << player.getSize().x << " " << player.getSize().y << std::endl;
+		sf::Time dt = deltaClock.restart();
+
+		std::cout << "DT as MS: " << dt.asMilliseconds() << std::endl;
 
 	}
 

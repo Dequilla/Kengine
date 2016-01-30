@@ -3,18 +3,22 @@
 #include "SFML/Graphics.hpp"
 #include "SFML/Window.hpp"
 
-class Window : public sf::RenderWindow 
-{
+namespace kengine {
+	
+	class Window : public sf::RenderWindow
+	{
 
-public:
-	Window(int width, int height, std::string title);
-	~Window();
+	public:
+		Window(int width, int height, std::string title);
+		~Window();
 
-	void windowEvents();
+		void windowEvents();
 
-private:
-	int m_width, m_height;
-	std::string m_title;
-	sf::RenderWindow m_window;
+	private:
+		int m_width, m_height;
+		std::string m_title;
+		sf::RenderWindow m_window;
 
-};
+	};
+
+}
