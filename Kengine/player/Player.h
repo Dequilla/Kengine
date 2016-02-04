@@ -2,6 +2,7 @@
 #include "SFML/Window.hpp"
 #include "SFML/Graphics.hpp"
 #include <iostream>
+#include <string>
 
 namespace kengine 
 {
@@ -25,6 +26,7 @@ namespace kengine
 		sf::Texture m_playerTexture;
 		int m_playerWidth = 0, m_playerHeight = 0;
 		sf::Vector2f m_imageSize;
+		std::string m_imagePath;
 
 	};
 
