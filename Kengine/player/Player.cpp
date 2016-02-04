@@ -2,7 +2,7 @@
 
 kengine::Player::Player()
 {
-	m_playerSprite.setColor(sf::Color(40, 40, 40, 255));
+	m_playerSprite.setColor(sf::Color(0, 255, 0, 255));
 	
 	m_imageSize.x = m_playerSprite.getLocalBounds().width;
 	m_imageSize.y = m_playerSprite.getLocalBounds().height;

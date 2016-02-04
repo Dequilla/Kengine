@@ -3,7 +3,8 @@
 #include "SFML/Graphics.hpp"
 #include <iostream>
 
-namespace kengine {
+namespace kengine 
+{
 
 	class Player
 	{
@@ -22,7 +23,7 @@ namespace kengine {
 	private:
 		sf::Sprite m_playerSprite;
 		sf::Texture m_playerTexture;
-		int m_playerWidth, m_playerHeight;
+		int m_playerWidth = 0, m_playerHeight = 0;
 		sf::Vector2f m_imageSize;
 
 	};

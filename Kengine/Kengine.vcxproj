@@ -116,12 +116,18 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="app\Game.cpp" />
+    <ClCompile Include="app\GameState.cpp" />
     <ClCompile Include="app\window.cpp" />
+    <ClCompile Include="gameStates\testState.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="player\Player.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="app\Game.h" />
+    <ClInclude Include="app\GameState.h" />
     <ClInclude Include="app\window.h" />
+    <ClInclude Include="gameStates\testState.h" />
     <ClInclude Include="player\Player.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
