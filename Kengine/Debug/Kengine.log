@@ -1,4 +1,4 @@
-﻿Build started 2016-02-02 10:20:11.
+﻿Build started 2016-02-04 20:51:27.
      1>Project "C:\Users\user\Documents\Kengine\Kengine\Kengine.vcxproj" on node 2 (Build target(s)).
      1>ClCompile:
          D:\Microsoft Visual Studio\VC\bin\CL.exe /c /IC:\Users\user\Documents\Kengine\/include /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"Debug\\" /Fd"Debug\vc140.pdb" /Gd /TP /analyze- /errorReport:prompt app\Game.cpp
@@ -15,4 +15,4 @@
 
 Build succeeded.
 
-Time Elapsed 00:00:01.42
+Time Elapsed 00:00:02.17

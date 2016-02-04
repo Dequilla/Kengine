@@ -32,7 +32,7 @@ namespace kengine
 	private:
 		std::stack<GameState*> m_states;
 		bool m_running = true;
-		sf::RenderWindow &m_gameWindow;
+		sf::RenderWindow *m_gameWindow = new sf::RenderWindow;
 		sf::Event m_event;
 	};
 
