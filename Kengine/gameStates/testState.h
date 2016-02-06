@@ -24,6 +24,6 @@ class testState : public kengine::GameState
 
 	private:
 		bool m_running;
-		kengine::Player m_player;
+		kengine::Player *m_player = nullptr;
 
 };

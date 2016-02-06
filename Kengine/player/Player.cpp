@@ -14,7 +14,7 @@ kengine::Player::Player(std::string imagePath, float factorX, float factorY)
 	{
 		//Couldn't load texture from file
 	}
-
+	m_imagePath = imagePath;
 	m_playerSprite.setTexture(m_playerTexture);
 	m_playerSprite.setScale(factorX, factorY);
 
