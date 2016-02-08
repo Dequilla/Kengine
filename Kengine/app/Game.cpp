@@ -78,3 +78,8 @@ sf::Clock kengine::Game::getClock()
 {
 	return *m_gameClock;
 }
+
+sf::Time kengine::Game::getDeltaTime()
+{
+	return *m_deltaTime;
+}

@@ -30,6 +30,7 @@ namespace kengine
 		void gameLoop();
 
 		sf::Clock getClock();
+		sf::Time getDeltaTime();
 
 	private:
 		sf::RenderWindow *m_gameWindow = new sf::RenderWindow;
