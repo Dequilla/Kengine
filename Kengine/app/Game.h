@@ -29,10 +29,14 @@ namespace kengine
 
 		void gameLoop();
 
+		sf::Clock getClock();
+
 	private:
+		sf::RenderWindow *m_gameWindow = new sf::RenderWindow;
+		sf::Clock *m_gameClock = new sf::Clock;
+		sf::Time *m_deltaTime = new sf::Time;
 		std::stack<GameState*> m_states;
 		bool m_running = true;
-		sf::RenderWindow *m_gameWindow = new sf::RenderWindow;
 		sf::Event m_event;
 	};
 

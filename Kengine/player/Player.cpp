@@ -27,12 +27,12 @@ kengine::Player::~Player()
 	
 }
 
-void kengine::Player::checkInput()
+void kengine::Player::checkInput(sf::Time &deltaTime)
 {
-	if (sf::Keyboard::isKeyPressed(sf::Keyboard::A)) movePlayer(sf::Vector2f(m_playerSprite.getPosition().x - 1, m_playerSprite.getPosition().y));
-	if (sf::Keyboard::isKeyPressed(sf::Keyboard::D)) movePlayer(sf::Vector2f(m_playerSprite.getPosition().x + 1, m_playerSprite.getPosition().y));
-	if (sf::Keyboard::isKeyPressed(sf::Keyboard::W)) movePlayer(sf::Vector2f(m_playerSprite.getPosition().x, m_playerSprite.getPosition().y - 1));
-	if (sf::Keyboard::isKeyPressed(sf::Keyboard::S)) movePlayer(sf::Vector2f(m_playerSprite.getPosition().x, m_playerSprite.getPosition().y + 1));
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::A)) movePlayer(sf::Vector2f((m_playerSprite.getPosition().x - 1), m_playerSprite.getPosition().y));
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::D)) movePlayer(sf::Vector2f((m_playerSprite.getPosition().x + 1), m_playerSprite.getPosition().y));
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::W)) movePlayer(sf::Vector2f(m_playerSprite.getPosition().x, (m_playerSprite.getPosition().y - 1)));
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::S)) movePlayer(sf::Vector2f(m_playerSprite.getPosition().x, (m_playerSprite.getPosition().y + 1)));
 }
 
 void kengine::Player::movePlayer(sf::Vector2f position)

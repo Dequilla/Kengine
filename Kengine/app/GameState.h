@@ -16,7 +16,7 @@ namespace kengine
 		virtual void pause() = 0;
 		virtual void resume() = 0;
 
-		virtual void handleEvents() = 0;
+		virtual void handleEvents(sf::Time &deltaTime) = 0;
 		virtual void update() = 0;
 		virtual void draw(sf::RenderWindow &gameWindow) = 0;
 

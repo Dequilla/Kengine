@@ -14,7 +14,7 @@ namespace kengine
 		Player(std::string imagePath, float factorX, float factorY);
 		~Player();
 
-		void checkInput();
+		void checkInput(sf::Time &deltaTime);
 		void movePlayer(sf::Vector2f position);
 
 		sf::Sprite getPlayerSprite() { return m_playerSprite; }
@@ -22,6 +22,7 @@ namespace kengine
 		void setSize(int width, int height);
 
 	private:
+		sf::Time m_deltaTime;
 		sf::Sprite m_playerSprite;
 		sf::Texture m_playerTexture;
 		int m_playerWidth = 0, m_playerHeight = 0;

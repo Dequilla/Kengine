@@ -14,7 +14,7 @@ class testState : public kengine::GameState
 		void pause();
 		void resume();
 
-		void handleEvents();
+		void handleEvents(sf::Time &deltaTime);
 		void update();
 		void draw(sf::RenderWindow &gameWindow);
 

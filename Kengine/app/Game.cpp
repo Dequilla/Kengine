@@ -8,6 +8,9 @@ kengine::Game::Game()// : m_gameWindow(sf::RenderWindow(sf::VideoMode(600,400),"
 kengine::Game::~Game()
 {
 	while (!this->m_states.empty()) popState();
+	delete m_gameWindow;
+	delete m_gameClock;
+	delete m_deltaTime;
 }
 
 void kengine::Game::changeState(kengine::GameState* state)
@@ -29,7 +32,6 @@ void kengine::Game::pushState(kengine::GameState* state)
 
 void kengine::Game::popState()
 {
-	//delete this->m_states.top();
 	this->m_states.pop();
 
 	return;
@@ -48,7 +50,7 @@ void kengine::Game::handleEvents()
 		if (m_event.type == sf::Event::Closed)
 			m_gameWindow->close();
 	}
-	peekState()->handleEvents();
+	peekState()->handleEvents(*m_deltaTime);
 }
 
 void kengine::Game::update()
@@ -66,7 +68,13 @@ void kengine::Game::gameLoop()
 {
 	while (m_gameWindow->isOpen())
 	{
-		this->handleEvents();
-		this->draw();
+		handleEvents();
+		draw();
+		*m_deltaTime = m_gameClock->restart();
 	}
+}
+
+sf::Clock kengine::Game::getClock()
+{
+	return *m_gameClock;
 }

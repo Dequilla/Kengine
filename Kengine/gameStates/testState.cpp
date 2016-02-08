@@ -18,9 +18,9 @@ void testState::resume()
 {
 }
 
-void testState::handleEvents()
+void testState::handleEvents(sf::Time &deltaTime)
 {
-	m_player->checkInput();
+	m_player->checkInput(deltaTime);
 }
 
 void testState::update()
