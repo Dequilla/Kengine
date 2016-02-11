@@ -7,23 +7,23 @@ class GameState;
 class testState : public kengine::GameState
 {
 
-	public:
-		testState();
-		~testState();
+public:
+	testState();
+	~testState();
 
-		void pause();
-		void resume();
+	void pause();
+	void resume();
 
-		void handleEvents(sf::Time &deltaTime);
-		void update();
-		void draw(sf::RenderWindow &gameWindow);
+	void handleEvents(sf::Time &deltaTime);
+	void update();
+	void draw(sf::RenderWindow &gameWindow);
 
-		bool running() { return m_running; }
-		void quit() { m_running = false; }
+	bool running() { return m_running; }
+	void quit() { m_running = false; }
 
 
-	private:
-		bool m_running;
-		kengine::Player *m_player = nullptr;
+private:
+	bool m_running;
+	kengine::Player *m_player = nullptr;
 
 };
