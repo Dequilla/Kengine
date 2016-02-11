@@ -2,7 +2,8 @@
 
 kengine::Game::Game()// : m_gameWindow(sf::RenderWindow(sf::VideoMode(600,400),"TEMP"))
 {
-	m_gameWindow->create(sf::VideoMode(1360, 766), "TEMP");
+	m_gameWindow->create(sf::VideoMode(1366, 768), "TEMP");
+	m_gameWindow->setFramerateLimit(60);
 }
 
 kengine::Game::~Game()
@@ -55,6 +56,7 @@ void kengine::Game::handleEvents()
 
 void kengine::Game::update()
 {
+	peekState()->update();
 }
 
 void kengine::Game::draw()
@@ -68,8 +70,10 @@ void kengine::Game::gameLoop()
 {
 	while (m_gameWindow->isOpen())
 	{
+		if(peekState() == nullptr) continue;
 		handleEvents();
 		draw();
+		update();
 		*m_deltaTime = m_gameClock->restart();
 	}
 }

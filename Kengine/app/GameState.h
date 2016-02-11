@@ -9,8 +9,8 @@ namespace kengine
 	class GameState
 	{
 	public:
-		
-		GameState() {};
+		GameState() { std::cout << "You should send your game with the gamestate" << std::endl; };
+		GameState(kengine::Game* game) {};
 		~GameState() {};
 
 		virtual void pause() = 0;
@@ -26,7 +26,7 @@ namespace kengine
 		void quit() { m_running = false; }
 
 	private:
-		bool m_running;
-
+		bool	m_running;
+		
 	};
 }
