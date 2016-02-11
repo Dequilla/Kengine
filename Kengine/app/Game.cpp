@@ -2,7 +2,7 @@
 
 kengine::Game::Game()// : m_gameWindow(sf::RenderWindow(sf::VideoMode(600,400),"TEMP"))
 {
-	m_gameWindow->create(sf::VideoMode(600, 400), "TEMP");
+	m_gameWindow->create(sf::VideoMode(1360, 766), "TEMP");
 }
 
 kengine::Game::~Game()
