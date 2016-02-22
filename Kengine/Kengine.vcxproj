@@ -87,7 +87,13 @@
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
+      <AdditionalIncludeDirectories>$(SolutionDir)/include/;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>SFML_STATIC;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
+    <Link>
+      <AdditionalLibraryDirectories>$(SolutionDir)/lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>sfml-graphics-d.lib;sfml-window-d.lib;sfml-system-d.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>
@@ -116,23 +122,17 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="app\Game.cpp" />
-    <ClCompile Include="app\GameState.cpp" />
-    <ClCompile Include="app\window.cpp" />
-    <ClCompile Include="gameStates\MainMenu.cpp" />
-    <ClCompile Include="gameStates\OpenScreen.cpp" />
-    <ClCompile Include="gameStates\testState.cpp" />
+    <ClCompile Include="Game.cpp" />
+    <ClCompile Include="GameStateMainMenu.cpp" />
+    <ClCompile Include="GameStateOpeningScreen.cpp" />
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="player\Player.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="app\Game.h" />
-    <ClInclude Include="app\GameState.h" />
-    <ClInclude Include="app\window.h" />
-    <ClInclude Include="gameStates\MainMenu.h" />
-    <ClInclude Include="gameStates\OpenScreen.h" />
-    <ClInclude Include="gameStates\testState.h" />
-    <ClInclude Include="player\Player.h" />
+    <ClInclude Include="Game.h" />
+    <ClInclude Include="GameState.h" />
+    <ClInclude Include="GameStateMainMenu.h" />
+    <ClInclude Include="GameStateOpeningScreen.h" />
+    <ClInclude Include="MenuButton.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

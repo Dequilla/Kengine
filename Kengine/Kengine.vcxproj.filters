@@ -18,48 +18,30 @@
     <ClCompile Include="main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="player\Player.cpp">
+    <ClCompile Include="Game.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="app\GameState.cpp">
+    <ClCompile Include="GameStateMainMenu.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="app\Game.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="app\window.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="gameStates\testState.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="gameStates\OpenScreen.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="gameStates\MainMenu.cpp">
+    <ClCompile Include="GameStateOpeningScreen.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="player\Player.h">
+    <ClInclude Include="Game.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="app\GameState.h">
+    <ClInclude Include="GameState.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="app\Game.h">
+    <ClInclude Include="GameStateMainMenu.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="app\window.h">
+    <ClInclude Include="GameStateOpeningScreen.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="gameStates\testState.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="gameStates\OpenScreen.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="gameStates\MainMenu.h">
+    <ClInclude Include="MenuButton.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
