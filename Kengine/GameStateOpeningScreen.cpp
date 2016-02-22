@@ -70,7 +70,3 @@ void GameStateOpeningScreen::update(const float dt)
 void GameStateOpeningScreen::handleInput(sf::Event event)
 {
 }
-
-void GameStateOpeningScreen::loadMenu()
-{
-}

@@ -20,6 +20,4 @@ private:
 	float			m_elapsedTime = 0, m_opacityChecker = 0.05f;
 	int				m_opacity = 0;
 	bool			m_fading = false, m_finished = false;
-
-	void loadMenu();
 };
