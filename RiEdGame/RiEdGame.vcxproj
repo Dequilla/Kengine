@@ -121,6 +121,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="..\Kengine\Button.cpp" />
     <ClCompile Include="..\Kengine\Game.cpp" />
     <ClCompile Include="GameStateMainMenu.cpp" />
     <ClCompile Include="GameStateOpeningScreen.cpp" />
@@ -128,6 +129,7 @@
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\Kengine\Button.h" />
     <ClInclude Include="..\Kengine\Game.h" />
     <ClInclude Include="..\Kengine\GameState.h" />
     <ClInclude Include="GameStateMainMenu.h" />

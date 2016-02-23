@@ -69,4 +69,9 @@ void GameStateOpeningScreen::update(const float dt)
 
 void GameStateOpeningScreen::handleInput(sf::Event event)
 {
+	switch (event.type)
+	{
+	case sf::Event::KeyPressed:
+		if (event.key.code == sf::Keyboard::Escape) this->m_game->changeState(new GameStateMainMenu(this->m_game));
+	}
 }
