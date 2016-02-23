@@ -4,10 +4,10 @@
 
 #include "GameState.h"
 
-class GameStatePlay : public GameState
+class GameStatePlay : public Kengine::GameState
 {
 public:
-	GameStatePlay(Game* game);
+	GameStatePlay(Kengine::Game* game);
 
 	virtual void draw(float dt);
 	virtual void update(float dt);

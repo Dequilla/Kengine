@@ -1,6 +1,6 @@
 #include "GameStateOpeningScreen.h"
 
-GameStateOpeningScreen::GameStateOpeningScreen(Game * game)
+GameStateOpeningScreen::GameStateOpeningScreen(Kengine::Game * game)
 {
 	this->m_game = game;
 	sf::Vector2f pos = sf::Vector2f(this->m_game->window.getSize());

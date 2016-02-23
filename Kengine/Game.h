@@ -4,28 +4,31 @@
 
 #include "SFML/Graphics.hpp"
 
-class GameState;
-
-class Game
+namespace Kengine
 {
-public:
-	std::stack<GameState*> states;
+	class GameState;
 
-	sf::RenderWindow window;
+	class Game
+	{
+	public:
+		std::stack<GameState*> states;
 
-	void pushState(GameState* state);
-	void popState();
-	void changeState(GameState* state);
-	GameState* peekState();
+		sf::RenderWindow window;
 
-	void gameLoop();
-	void draw(const float dt);
-	void update(const float dt);
-	void handleEvents();
+		void pushState(GameState* state);
+		void popState();
+		void changeState(GameState* state);
+		GameState* peekState();
 
-	Game(int width = 640, int height = 360, int fps = 60);
-	~Game();
+		void gameLoop();
+		void draw(const float dt);
+		void update(const float dt);
+		void handleEvents();
 
-private:
-	sf::Event m_event;
-};
+		Game(int width = 640, int height = 360, int fps = 60);
+		~Game();
+
+	private:
+		sf::Event m_event;
+	};
+}

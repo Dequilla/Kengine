@@ -1,6 +1,6 @@
 #include "GameStatePlay.h"
 
-GameStatePlay::GameStatePlay(Game* game)
+GameStatePlay::GameStatePlay(Kengine::Game* game)
 {
 	this->m_game = game;
 }

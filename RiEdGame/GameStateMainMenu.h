@@ -7,10 +7,10 @@
 
 #include <iostream>
 
-class GameStateMainMenu : public GameState
+class GameStateMainMenu : public Kengine::GameState
 {
 public:
-	GameStateMainMenu(Game* game);
+	GameStateMainMenu(Kengine::Game* game);
 
 	virtual void draw(const float dt);
 	virtual void update(const float dt);

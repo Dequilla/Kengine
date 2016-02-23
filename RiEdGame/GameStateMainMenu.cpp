@@ -1,6 +1,6 @@
 #include "GameStateMainMenu.h"
 
-GameStateMainMenu::GameStateMainMenu(Game * game)
+GameStateMainMenu::GameStateMainMenu(Kengine::Game * game)
 {
 	this->m_game = game;
 

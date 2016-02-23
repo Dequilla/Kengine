@@ -3,10 +3,10 @@
 #include "GameState.h"
 #include "GameStateMainMenu.h"
 
-class GameStateOpeningScreen : public GameState
+class GameStateOpeningScreen : public Kengine::GameState
 {
 public:
-	GameStateOpeningScreen(Game* game);
+	GameStateOpeningScreen(Kengine::Game* game);
 
 	virtual void draw(const float dt);
 	virtual void update(const float dt);
