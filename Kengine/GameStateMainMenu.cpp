@@ -60,7 +60,7 @@ void GameStateMainMenu::handleInput(sf::Event event)
 		}
 		else if (this->m_buttonStartGame.getGlobalBounds().contains(sf::Mouse::getPosition(this->m_game->window).x, sf::Mouse::getPosition(this->m_game->window).y))
 		{
-			this->m_game->changeState(new GameStateOpeningScreen(this->m_game));
+			this->m_game->changeState(new GameStatePlay(this->m_game));
 		}
 		break;
 	}

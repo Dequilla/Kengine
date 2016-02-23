@@ -3,6 +3,7 @@
 #include "GameState.h"
 #include "MenuButton.h"
 #include "GameStateOpeningScreen.h"
+#include "GameStatePlay.h"
 
 #include <iostream>
 
