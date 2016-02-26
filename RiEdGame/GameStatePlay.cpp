@@ -24,21 +24,23 @@ GameStatePlay::GameStatePlay(Kengine::Game* game)
 
 void GameStatePlay::draw(float dt)
 {
+	//Center the gameview on the player
 	this->m_gameView.setCenter(this->m_player.getSprite().getPosition());
-	//this->m_gameView.zoom(4.0f);
-	//this->m_hudView.setViewport(sf::FloatRect(0.25f, 0.25, 0.5f, 0.5f));
-
-	this->m_game->window.setView(m_hudView);
-	this->m_game->window.draw(this->m_hudSprite);
 	
+	//Game
 	this->m_game->window.setView(m_gameView);
 	this->m_game->window.draw(this->m_mapSprite);
 	this->m_game->window.draw(this->m_player.getSprite());
 	
+
+	//HUD
+	this->m_game->window.setView(m_hudView);
+	this->m_game->window.draw(this->m_hudSprite);
 }
 
 void GameStatePlay::update(float dt)
 {
+	this->m_player.update();
 }
 
 void GameStatePlay::handleInput(sf::Event event)
