@@ -4,6 +4,8 @@
 
 #include "GameState.h"
 
+#include "Player.h"
+
 class GameStatePlay : public Kengine::GameState
 {
 public:
@@ -15,5 +17,13 @@ public:
 
 private:
 
-	sf::View m_hudView, m_gameView;
+	sf::View		m_hudView;
+	sf::View		m_gameView;
+
+	Player			m_player;
+
+	sf::Texture		m_hudTexture;
+	sf::Sprite		m_hudSprite;
+	sf::Texture		m_mapTexture;
+	sf::Sprite		m_mapSprite;
 };

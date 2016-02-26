@@ -8,7 +8,7 @@ namespace Kengine
 	{
 	public:
 		Button() {};
-		Button(sf::Font &font, const sf::Vector2f size = sf::Vector2f(0,0));
+		Button(sf::Font &font, const sf::Vector2f size = sf::Vector2f(200,50));
 
 		void setSize(const sf::Vector2f size);
 		void setString(const std::string string);
