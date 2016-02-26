@@ -29,5 +29,9 @@ private:
 
 	Kengine::Button		m_buttonExitGame;
 	Kengine::Button		m_buttonStartGame;
+	Kengine::Button		m_buttonOptions;
+	Kengine::Button		m_buttons[3] = { m_buttonStartGame, m_buttonOptions, m_buttonExitGame };
+
+	int m_currentChoice = 0;
 
 };

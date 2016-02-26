@@ -15,22 +15,30 @@ GameStateMainMenu::GameStateMainMenu(Kengine::Game * game)
 	this->m_textMenu.setString("MAIN MENU!");
 	this->m_textMenu.setPosition(sf::Vector2f(300, 100));
 
-	this->m_buttonStartGame.setFont(temp_font);
-	this->m_buttonStartGame.setPosition(sf::Vector2f(300, 250));
-	this->m_buttonStartGame.setSize(sf::Vector2f(200, 50));
-	this->m_buttonStartGame.setString("Start game");
-	this->m_buttonStartGame.setBackgroundColor(sf::Color(255, 0, 0, 255));
-	this->m_buttonStartGame.setOverBackgroundColor(sf::Color(150, 0, 0, 255));
-	this->m_buttonStartGame.setOverTextColor(sf::Color(200, 200, 200, 255));
-
-	this->m_buttonExitGame.setFont(temp_font);
-	this->m_buttonExitGame.setPosition(sf::Vector2f(300, 350));
-	this->m_buttonExitGame.setSize(sf::Vector2f(200, 50));
-	this->m_buttonExitGame.setString("Exit game");
-	this->m_buttonExitGame.setBackgroundColor(sf::Color(255, 0, 0, 255));
-	this->m_buttonExitGame.setOverBackgroundColor(sf::Color(150, 0, 0, 255));
-	this->m_buttonExitGame.setOverTextColor(sf::Color(200, 200, 200, 255));
-
+	this->m_buttons[0].setFont(temp_font);
+	this->m_buttons[0].setPosition(sf::Vector2f(300, 250));
+	this->m_buttons[0].setSize(sf::Vector2f(200, 50));
+	this->m_buttons[0].setString("Start Game");
+/*	this->m_buttons[0].setBackgroundColor(sf::Color(255, 0, 0, 255));
+	this->m_buttons[0].setOverBackgroundColor(sf::Color(150, 0, 0, 255));
+	this->m_buttons[0].setOverTextColor(sf::Color(200, 200, 200, 255));
+*/
+	this->m_buttons[1].setFont(temp_font);
+	this->m_buttons[1].setPosition(sf::Vector2f(300, 350));
+	this->m_buttons[1].setSize(sf::Vector2f(200, 50));
+	this->m_buttons[1].setString("Options");
+/*	this->m_buttons[1].setBackgroundColor(sf::Color(255, 0, 0, 255));
+	this->m_buttons[1].setOverBackgroundColor(sf::Color(150, 0, 0, 255));
+	this->m_buttons[1].setOverTextColor(sf::Color(200, 200, 200, 255));
+*/
+	this->m_buttons[2].setFont(temp_font);
+	this->m_buttons[2].setPosition(sf::Vector2f(300, 450));
+	this->m_buttons[2].setSize(sf::Vector2f(200, 50));
+	this->m_buttons[2].setString("Exit Game");
+/*	this->m_buttons[1].setBackgroundColor(sf::Color(255, 0, 0, 255));
+	this->m_buttons[1].setOverBackgroundColor(sf::Color(150, 0, 0, 255));
+	this->m_buttons[1].setOverTextColor(sf::Color(200, 200, 200, 255));
+*/
 }
 
 void GameStateMainMenu::draw(const float dt)
@@ -39,8 +47,25 @@ void GameStateMainMenu::draw(const float dt)
 	this->m_game->window.draw(this->m_spriteBackground);
 	////////////////////////////////
 
-	this->m_game->window.draw(this->m_buttonStartGame);
-	this->m_game->window.draw(this->m_buttonExitGame);
+	for (int i = 0; i < 3; i++)
+	{
+		if (i == m_currentChoice)
+		{
+			this->m_buttons[i].setBackgroundColor(sf::Color(125, 125, 125, 255));
+			this->m_buttons[i].setTextColor(sf::Color(0, 51, 102, 255));
+		}
+		else
+		{
+			this->m_buttons[i].setBackgroundColor(sf::Color(0, 0, 0, 255));
+			this->m_buttons[i].setTextColor(sf::Color(255, 255, 255, 255));
+		}
+	}
+
+	for (int i = 0; i < 3; i++)
+	{
+		this->m_game->window.draw(this->m_buttons[i]);
+	}
+
 	this->m_game->window.draw(this->m_textMenu);
 }
 
@@ -55,13 +80,40 @@ void GameStateMainMenu::handleInput(sf::Event event)
 	switch (event.type)
 	{
 	case sf::Event::KeyPressed:
-		if (event.key.code == sf::Keyboard::Up) std::cout << "UP";
-		else if (event.key.code == sf::Keyboard::Down) /*Do something else */;
+		if (event.key.code == sf::Keyboard::Up)
+		{
+			m_currentChoice--;
+			if (m_currentChoice == -1)
+			{
+				m_currentChoice = 2;
+			}
+		}
+		else if (event.key.code == sf::Keyboard::Down)
+		{
+			m_currentChoice++;
+			if (m_currentChoice == 3)
+			{
+				m_currentChoice = 0;
+			}
+		}
 		if (event.key.code == sf::Keyboard::Left) /*Do something*/;
 		else if (event.key.code == sf::Keyboard::Right) /*Do something*/;
+
+		if (event.key.code == sf::Keyboard::Return)
+		{
+			if (m_currentChoice == 0)
+			{
+				this->startGame();
+			}
+			else if (m_currentChoice == 2)
+			{
+				this->m_game->window.close();
+			}
+		}
+
 		break;
 	}
-
+	/*
 	m_buttonStartGame.events(event);
 	if (m_buttonStartGame.clicked())
 	{
@@ -72,7 +124,7 @@ void GameStateMainMenu::handleInput(sf::Event event)
 	{
 		this->m_game->window.close();
 	}
-	
+	*/
 }
 
 void GameStateMainMenu::startGame()
