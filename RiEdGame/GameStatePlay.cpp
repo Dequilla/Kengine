@@ -14,12 +14,14 @@ GameStatePlay::GameStatePlay(Kengine::Game* game)
 
 	if(!this->m_hudTexture.loadFromFile("resources/images/hud.png"));
 	m_hudSprite.setTexture(m_hudTexture);
-	m_hudSprite.setPosition(.0f, .0f);
+	m_hudSprite.setPosition(50.0f, 50.0f);
+	m_hudSprite.setScale(0.5f, 0.5f);
 
-	if (!this->m_mapTexture.loadFromFile("resources/images/map.jpg"));
+	if (!this->m_mapTexture.loadFromFile("resources/images/map.png"));
 	m_mapSprite.setTexture(m_mapTexture);
+	m_mapSprite.setScale(4.5f, 4.5f);
+	m_mapSprite.setOrigin(m_mapSprite.getLocalBounds().width / 2, m_mapSprite.getLocalBounds().height / 2);
 	m_mapSprite.setPosition(.0f, .0f);
-	m_mapSprite.setScale(3.0f, 3.0f);
 }
 
 void GameStatePlay::draw(float dt)

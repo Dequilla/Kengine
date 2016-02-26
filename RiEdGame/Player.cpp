@@ -3,8 +3,6 @@
 Player::Player(std::string spriteSheetPath)
 {
 	this->create(spriteSheetPath);
-	this->m_maxVelocityX = 15.0f;
-	this->m_maxVelocityY = 15.0f;
 }
 
 sf::Sprite Player::getSprite()
@@ -17,6 +15,7 @@ void Player::create(std::string spriteSheetPath)
 	if (!this->m_spriteSheet.loadFromFile(spriteSheetPath));
 	this->m_sprite.setTexture(this->m_spriteSheet);
 	this->m_sprite.setTextureRect(sf::IntRect(0, 0, 120, 130));
+	this->m_sprite.setOrigin(this->m_sprite.getLocalBounds().width / 2, this->m_sprite.getLocalBounds().height / 2);
 }
 
 void Player::handleInput(sf::Event event)
@@ -95,7 +94,6 @@ void Player::update()
 	{
 		if (this->m_velocityY < this->m_maxVelocityY)
 		{
-			std::cout << this->m_maxVelocityY * -1;
 			this->m_velocityY = this->m_velocityY + this->m_accelerationY;
 		}
 	}
