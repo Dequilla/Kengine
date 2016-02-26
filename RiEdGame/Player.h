@@ -21,7 +21,7 @@ private:
 
 	float m_velocity = 0.0f;
 	float m_maxVelocity = 20.0f;
-	float m_acceleration = 2.0f;	
+	float m_acceleration = 3.0f;	
 
 	sf::Texture			m_spriteSheet;
 	sf::Sprite			m_sprite;
