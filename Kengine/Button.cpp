@@ -1,6 +1,6 @@
 #include "Button.h"
 
-Kengine::Button::Button(sf::Font &font, sf::Vector2f size) : m_overActive(true)
+Kengine::Button::Button(sf::Font &font, sf::Vector2f size)
 {
 	this->setSize(size);
 	this->setFont(font);
