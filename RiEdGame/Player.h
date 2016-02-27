@@ -16,7 +16,7 @@ public:
 
 	void create(std::string spriteSheetPath);
 	void handleInput(sf::Event event);
-	void update();
+	void update(float dt);
 
 private:
 
@@ -25,13 +25,13 @@ private:
 						m_movingLeft = false,
 						m_movingRight = false;
 
-	float				m_velocityX = 0.0f;
-	float				m_maxVelocityX = 15.0f;
-	float				m_accelerationX = 3.0f;	
+	float				m_velocityX = 0.0000f;
+	float				m_maxVelocityX = 300.0000f;
+	float				m_accelerationX = 200.0000f;	
 
-	float				m_velocityY = 0.0f;
-	float				m_maxVelocityY = 15.0f;
-	float				m_accelerationY = 3.0f;
+	float				m_velocityY = 0.00000f;
+	float				m_maxVelocityY = 300.0000f;
+	float				m_accelerationY = 200.0000f;
 
 	sf::Texture			m_spriteSheet;
 	sf::Sprite			m_sprite;

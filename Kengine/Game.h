@@ -25,10 +25,20 @@ namespace Kengine
 		void update(const float dt);
 		void handleEvents();
 
-		Game(int width = 640, int height = 360, int fps = 60);
+		void showSystemCursor(bool show);
+
+		Game(int width = 640, int height = 360, int fps = 0, bool fullscreen = true);
 		~Game();
 
 	private:
 		sf::Event m_event;
+
+		sf::Clock			m_clock;
+		sf::Time			m_elapsed;
+		
+		float				m_dt = 0.0f;
+		float				m_accumulator = 0.0f;
+		const float			m_timestep = 1.0f / 10.0f;
+		const float			m_speed = 60.0f;
 	};
 }

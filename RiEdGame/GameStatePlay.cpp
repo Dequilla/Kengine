@@ -42,7 +42,7 @@ void GameStatePlay::draw(float dt)
 
 void GameStatePlay::update(float dt)
 {
-	this->m_player.update();
+	this->m_player.update(dt);
 }
 
 void GameStatePlay::handleInput(sf::Event event)

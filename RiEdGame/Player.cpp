@@ -52,7 +52,7 @@ void Player::handleInput(sf::Event event)
 					this->m_movingRight = true;
 				}
 			}
-		break;
+			break;
 
 		case sf::Event::KeyReleased:
 			if (event.key.code == sf::Keyboard::Up)
@@ -71,21 +71,21 @@ void Player::handleInput(sf::Event event)
 			{
 				this->m_movingRight = false;
 			}
-		break;
+			break;
 
 	}
 }
 
-void Player::update()
+void Player::update(float dt)
 {
 	//Speed up
-	
+
 	//	UP
-	if(this->m_movingUp == true)
-	{		
-		if (this->m_velocityY > this->m_maxVelocityY * -1)
+	if (this->m_movingUp == true)
+	{
+		if (this->m_velocityY > this->m_maxVelocityY * -1.0f)
 		{
-			this->m_velocityY = this->m_velocityY - this->m_accelerationY;
+			this->m_velocityY = this->m_velocityY - this->m_accelerationY * (dt * 10.0f);
 		}
 	}
 
@@ -94,16 +94,16 @@ void Player::update()
 	{
 		if (this->m_velocityY < this->m_maxVelocityY)
 		{
-			this->m_velocityY = this->m_velocityY + this->m_accelerationY;
+			this->m_velocityY = this->m_velocityY + this->m_accelerationY * (dt * 10.0f);
 		}
 	}
 
 	//	LEFT
 	if (this->m_movingLeft == true)
 	{
-		if (this->m_velocityX > this->m_maxVelocityX * -1)
+		if (this->m_velocityX > this->m_maxVelocityX * -1.0f)
 		{
-			this->m_velocityX = this->m_velocityX - this->m_accelerationX;
+			this->m_velocityX = this->m_velocityX - this->m_accelerationX * (dt * 10.0f);
 		}
 	}
 
@@ -112,37 +112,58 @@ void Player::update()
 	{
 		if (this->m_velocityX < this->m_maxVelocityX)
 		{
-			this->m_velocityX = this->m_velocityX + this->m_accelerationX;
+			this->m_velocityX = this->m_velocityX + this->m_accelerationX * (dt * 10.0f);
 		}
 	}
 
 
 	//Slow down
-	
+
 	//	UP
-	if (m_movingUp == false && m_velocityY < 0)
+	if (m_movingUp == false && m_velocityY < 0.0f)
 	{
-		this->m_velocityY = this->m_velocityY + this->m_accelerationY;	
+		this->m_velocityY = this->m_velocityY + this->m_accelerationY * (dt * 10.0f);
 	}
 
 	//	DOWN
-	if (m_movingDown == false && m_velocityY > 0)
+	if (m_movingDown == false && m_velocityY > 0.0f)
 	{
-		this->m_velocityY = this->m_velocityY - this->m_accelerationY;
+		this->m_velocityY = this->m_velocityY - this->m_accelerationY * (dt * 10.0f);
 	}
 
 	//	LEFT
-	if (m_movingLeft == false && m_velocityX < 0)
+	if (m_movingLeft == false && m_velocityX < 0.0f)
 	{
-		this->m_velocityX = this->m_velocityX + this->m_accelerationX;
+		this->m_velocityX = this->m_velocityX + this->m_accelerationX * (dt * 10.0f);
 	}
 
 	//	RIGHT
-	if (m_movingRight == false && m_velocityX > 0)
+	if (m_movingRight == false && m_velocityX > 0.0f)
 	{
-		this->m_velocityX = this->m_velocityX - this->m_accelerationX;
+		this->m_velocityX = this->m_velocityX - this->m_accelerationX * (dt * 10.0f);
+	}
+
+	std::cout << "VelY: " << m_velocityY << " VelX: " << m_velocityX << " Acc X: " << this->m_accelerationX * (dt * 10.0f) << " Acc Y: " << this->m_accelerationY * (dt * 10.0f) << "  DT:  " << dt * 10.0f << std::endl;
+	
+	//Do not let it go any faster than max_velocity
+	if (m_velocityX > m_maxVelocityX)
+	{
+		m_velocityX = m_maxVelocityX;
+	}
+	else if (m_velocityX < m_maxVelocityX * -1.0f)
+	{
+		m_velocityX = m_maxVelocityX * -1.0f;
+	}
+	
+	if (m_velocityY > m_maxVelocityY)
+	{
+		m_velocityY = m_maxVelocityY;
+	}
+	else if (m_velocityY < m_maxVelocityY * -1.0f)
+	{
+		m_velocityY = m_maxVelocityY * -1.0f;
 	}
 
 
-	this->m_sprite.move(this->m_velocityX, this->m_velocityY);
+	this->m_sprite.move((this->m_velocityX * dt), (this->m_velocityY * dt));
 }

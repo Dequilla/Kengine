@@ -3,6 +3,8 @@
 #include "SFML/Graphics.hpp"
 #include "SFML/System.hpp"
 
+#include <iostream>
+
 #include "Game.h"
 #include "GameState.h"
 namespace Kengine
@@ -32,17 +34,17 @@ namespace Kengine
 
 	void Game::gameLoop()
 	{
-		sf::Clock clock;
 
 		while (window.isOpen())
 		{
-			sf::Time elapsed = clock.restart();
-			float dt = elapsed.asSeconds();
+			this->m_elapsed = m_clock.getElapsedTime();
+			this->m_dt = m_elapsed.asSeconds();
+			this->m_clock.restart();
 
 			if (peekState() == nullptr) continue;
-			this->handleEvents(); //Input and window events
-			this->update(dt); //Game updates
-			this->draw(dt); //Handles all the drawing
+			this->handleEvents(); //Window events and input
+			this->update(this->m_dt); //Game updates
+			this->draw(this->m_dt); //Handles all the drawing
 		}
 	}
 
@@ -62,6 +64,7 @@ namespace Kengine
 	{
 		while (this->window.pollEvent(m_event))
 		{
+
 			this->peekState()->handleInput(m_event); //Do state input first
 
 			if (m_event.type == sf::Event::Closed)
@@ -71,10 +74,32 @@ namespace Kengine
 		}
 	}
 
-	Game::Game(int width, int height, int fps)
+	void Game::showSystemCursor(bool show)
 	{
-		window.create(sf::VideoMode(width, height), "Kengine", sf::Style::Titlebar | sf::Style::Close);
-		window.setFramerateLimit(fps);
+		this->window.setMouseCursorVisible(show);
+	}
+
+	Game::Game(int width, int height, int fps, bool fullscreen)
+	{
+		if (fullscreen == true)
+		{
+			window.create(sf::VideoMode(width, height), "Kengine", sf::Style::Fullscreen);
+		}
+		else if (fullscreen == false)
+		{
+			window.create(sf::VideoMode(width, height), "Kengine", sf::Style::Titlebar | sf::Style::Close);
+		}
+		
+		if (fps > 0)
+		{
+			window.setFramerateLimit(fps);
+		}
+		/*else if (fps <= 0)
+		{
+			//No fps limit
+		}*/
+		
+		window.setVerticalSyncEnabled(true);
 	}
 
 	Game::~Game()
