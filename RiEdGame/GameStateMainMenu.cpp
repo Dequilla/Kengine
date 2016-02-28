@@ -15,30 +15,20 @@ GameStateMainMenu::GameStateMainMenu(Kengine::Game * game)
 	this->m_textMenu.setString("MAIN MENU!");
 	this->m_textMenu.setPosition(sf::Vector2f(300, 100));
 
-	this->m_buttons[0].setFont(temp_font);
+	this->m_buttons[0].setFont(this->temp_font);
 	this->m_buttons[0].setPosition(sf::Vector2f(300, 250));
 	this->m_buttons[0].setSize(sf::Vector2f(200, 50));
 	this->m_buttons[0].setString("Start Game");
-/*	this->m_buttons[0].setBackgroundColor(sf::Color(255, 0, 0, 255));
-	this->m_buttons[0].setOverBackgroundColor(sf::Color(150, 0, 0, 255));
-	this->m_buttons[0].setOverTextColor(sf::Color(200, 200, 200, 255));
-*/
-	this->m_buttons[1].setFont(temp_font);
+
+	this->m_buttons[1].setFont(this->temp_font);
 	this->m_buttons[1].setPosition(sf::Vector2f(300, 350));
 	this->m_buttons[1].setSize(sf::Vector2f(200, 50));
 	this->m_buttons[1].setString("Options");
-/*	this->m_buttons[1].setBackgroundColor(sf::Color(255, 0, 0, 255));
-	this->m_buttons[1].setOverBackgroundColor(sf::Color(150, 0, 0, 255));
-	this->m_buttons[1].setOverTextColor(sf::Color(200, 200, 200, 255));
-*/
-	this->m_buttons[2].setFont(temp_font);
+
+	this->m_buttons[2].setFont(this->temp_font);
 	this->m_buttons[2].setPosition(sf::Vector2f(300, 450));
 	this->m_buttons[2].setSize(sf::Vector2f(200, 50));
 	this->m_buttons[2].setString("Exit Game");
-/*	this->m_buttons[1].setBackgroundColor(sf::Color(255, 0, 0, 255));
-	this->m_buttons[1].setOverBackgroundColor(sf::Color(150, 0, 0, 255));
-	this->m_buttons[1].setOverTextColor(sf::Color(200, 200, 200, 255));
-*/
 }
 
 void GameStateMainMenu::draw(const float dt)
@@ -96,8 +86,9 @@ void GameStateMainMenu::handleInput(sf::Event event)
 				m_currentChoice = 0;
 			}
 		}
-		if (event.key.code == sf::Keyboard::Left) /*Do something*/;
-		else if (event.key.code == sf::Keyboard::Right) /*Do something*/;
+	
+	//	if (event.key.code == sf::Keyboard::Left) /*Do something*/;
+	//	else if (event.key.code == sf::Keyboard::Right) /*Do something*/;
 
 		if (event.key.code == sf::Keyboard::Return)
 		{
@@ -113,6 +104,7 @@ void GameStateMainMenu::handleInput(sf::Event event)
 
 		break;
 	}
+
 	/*
 	m_buttonStartGame.events(event);
 	if (m_buttonStartGame.clicked())

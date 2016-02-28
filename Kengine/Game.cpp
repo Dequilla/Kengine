@@ -70,7 +70,7 @@ namespace Kengine
 			if (m_event.type == sf::Event::Closed)
 				this->window.close();
 			if (m_event.type == sf::Event::Resized)
-				window.setView(sf::View(sf::FloatRect(0, 0, m_event.size.width, m_event.size.height)));
+				window.setView(sf::View(sf::FloatRect(0.0f, 0.0f, m_event.size.width, m_event.size.height)));
 		}
 	}
 

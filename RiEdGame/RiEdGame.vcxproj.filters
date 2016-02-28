@@ -13,17 +13,17 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
-    <Filter Include="Header Files\inih">
-      <UniqueIdentifier>{35fbf9d0-6ab6-480b-bbe6-cf8767a7a855}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\inih">
-      <UniqueIdentifier>{1ff36a46-f9c6-4e01-810d-712112e345b0}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Source Files\kengine">
       <UniqueIdentifier>{216fedc4-9183-40ab-8ad0-32fac64d9df9}</UniqueIdentifier>
     </Filter>
     <Filter Include="Header Files\kengine">
       <UniqueIdentifier>{d50a97c1-2433-4abc-87a0-e2c082d5a68f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\kengine\options">
+      <UniqueIdentifier>{a8c80c32-e99e-4af0-8443-626269c0140e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\kengine\options">
+      <UniqueIdentifier>{e05f04a0-e15f-43f5-ba14-d9c1e41e949f}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -42,17 +42,14 @@
     <ClCompile Include="Player.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\Kengine\INIReader.cpp">
-      <Filter>Source Files\inih</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Kengine\ini.c">
-      <Filter>Source Files\inih</Filter>
-    </ClCompile>
     <ClCompile Include="..\Kengine\Game.cpp">
       <Filter>Source Files\kengine</Filter>
     </ClCompile>
     <ClCompile Include="..\Kengine\Button.cpp">
       <Filter>Source Files\kengine</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Kengine\Kopter.cpp">
+      <Filter>Source Files\kengine\options</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -71,12 +68,6 @@
     <ClInclude Include="Player.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\Kengine\INIReader.h">
-      <Filter>Header Files\inih</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Kengine\ini.h">
-      <Filter>Header Files\inih</Filter>
-    </ClInclude>
     <ClInclude Include="..\Kengine\Button.h">
       <Filter>Header Files\kengine</Filter>
     </ClInclude>
@@ -85,6 +76,9 @@
     </ClInclude>
     <ClInclude Include="..\Kengine\GameState.h">
       <Filter>Header Files\kengine</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Kengine\Kopter.h">
+      <Filter>Header Files\kengine\options</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

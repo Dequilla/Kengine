@@ -11,8 +11,8 @@ class GameStatePlay : public Kengine::GameState
 public:
 	GameStatePlay(Kengine::Game* game);
 
-	virtual void draw(float dt);
-	virtual void update(float dt);
+	virtual void draw(const float dt);
+	virtual void update(const float dt);
 	virtual void handleInput(sf::Event event);
 
 private:

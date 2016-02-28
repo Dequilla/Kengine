@@ -1,34 +1,29 @@
 #include "Game.h"
 #include "GameStateOpeningScreen.h"
-
-#include "INIReader.h"
-#include "ini.h"
+#include "Kopter.h"
 
 int main()
 {
 
-	INIReader reader("config.ini");
+	//	Our own options file reader(will also parse in the future)
+	Kengine::Kopter	options;
 
-	if (reader.ParseError() < 0)
-	{
-		std::cout << "Can't load config.ini" << std::endl;
-		//Use default settings
-	}
-
+	int fps = 0;
+	int width = 1360;
+	int height = 768;
 	bool fullscreen = false;
 
-	if (reader.Get("options", "fullscreen", "true") == "true")
+	//	If the options-file is successfully read
+	//	Set values read from said file
+	if (options.readFile("options.kopt"))
 	{
-		fullscreen = true;
-	}
-	else
-	{
-		fullscreen = false;
+		fps = options.getIntOptionAt("fps");
+		width = options.getIntOptionAt("gamewidth");
+		height = options.getIntOptionAt("gameheight");
+		fullscreen = options.getBoolOptionAt("fullscreen");
 	}
 
-	//TODO write own frame limiter use "0" in meantime
-	//width, height, fps
-	Kengine::Game game(1360, 768, 0, fullscreen);
+	Kengine::Game game(width, height, fps, fullscreen);
 	
 	game.showSystemCursor(true);
 

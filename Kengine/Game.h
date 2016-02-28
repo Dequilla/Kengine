@@ -8,6 +8,16 @@ namespace Kengine
 {
 	class GameState;
 
+	///////////////////////////////////////////////////////////////////////////
+	// 
+	//	Game is the primary game class used within Kengine. It handles such
+	//	things as the game-window aswell as the gameloop.
+	//
+	//	Example use:	Kengine::Game game(width, height, fps, fullscreen);	
+	//					game.changeState(Kengine::GameState state);
+	//					game.gameLoop(); //Starts the gameloop
+	// 
+	///////////////////////////////////////////////////////////////////////////
 	class Game
 	{
 	public:

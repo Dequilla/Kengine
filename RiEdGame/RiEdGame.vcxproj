@@ -126,8 +126,7 @@
   <ItemGroup>
     <ClCompile Include="..\Kengine\Button.cpp" />
     <ClCompile Include="..\Kengine\Game.cpp" />
-    <ClCompile Include="..\Kengine\ini.c" />
-    <ClCompile Include="..\Kengine\INIReader.cpp" />
+    <ClCompile Include="..\Kengine\Kopter.cpp" />
     <ClCompile Include="GameStateMainMenu.cpp" />
     <ClCompile Include="GameStateOpeningScreen.cpp" />
     <ClCompile Include="GameStatePlay.cpp" />
@@ -138,8 +137,7 @@
     <ClInclude Include="..\Kengine\Button.h" />
     <ClInclude Include="..\Kengine\Game.h" />
     <ClInclude Include="..\Kengine\GameState.h" />
-    <ClInclude Include="..\Kengine\ini.h" />
-    <ClInclude Include="..\Kengine\INIReader.h" />
+    <ClInclude Include="..\Kengine\Kopter.h" />
     <ClInclude Include="GameStateMainMenu.h" />
     <ClInclude Include="GameStateOpeningScreen.h" />
     <ClInclude Include="GameStatePlay.h" />

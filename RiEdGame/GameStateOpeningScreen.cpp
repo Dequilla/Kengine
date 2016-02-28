@@ -12,8 +12,8 @@ GameStateOpeningScreen::GameStateOpeningScreen(Kengine::Game * game)
 
 	m_openingSprite.setColor(sf::Color(255, 255, 255, 0));
 	m_openingSprite.setTexture(m_openingImage);
-	m_openingSprite.setOrigin((this->m_openingSprite.getGlobalBounds().width/2), (this->m_openingSprite.getGlobalBounds().height/2));
-	m_openingSprite.setPosition((this->m_game->window.getSize().x / 2), (this->m_game->window.getSize().y / 2));
+	m_openingSprite.setOrigin((this->m_openingSprite.getGlobalBounds().width/2.0f), (this->m_openingSprite.getGlobalBounds().height/2.0f));
+	m_openingSprite.setPosition((this->m_game->window.getSize().x / 2.0f), (this->m_game->window.getSize().y / 2.0f));
 
 	m_clock.restart();
 }

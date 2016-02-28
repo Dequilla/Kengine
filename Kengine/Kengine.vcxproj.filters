@@ -13,11 +13,11 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
-    <Filter Include="Header Files\inih">
-      <UniqueIdentifier>{b183ca6b-1e4a-4497-8b99-27f6adc25860}</UniqueIdentifier>
+    <Filter Include="Source Files\options">
+      <UniqueIdentifier>{b9fa3833-b032-46a5-93e3-af495a5468a2}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\inih">
-      <UniqueIdentifier>{5a38ebbb-3f90-42a0-9207-23765ed47245}</UniqueIdentifier>
+    <Filter Include="Header Files\options">
+      <UniqueIdentifier>{a9cc801b-051a-4e3a-ba71-e5a9607b77c0}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -27,11 +27,8 @@
     <ClCompile Include="Button.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="INIReader.cpp">
-      <Filter>Source Files\inih</Filter>
-    </ClCompile>
-    <ClCompile Include="ini.c">
-      <Filter>Source Files\inih</Filter>
+    <ClCompile Include="Kopter.cpp">
+      <Filter>Source Files\options</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -44,11 +41,8 @@
     <ClInclude Include="Button.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="INIReader.h">
-      <Filter>Header Files\inih</Filter>
-    </ClInclude>
-    <ClInclude Include="ini.h">
-      <Filter>Header Files\inih</Filter>
+    <ClInclude Include="Kopter.h">
+      <Filter>Header Files\options</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
