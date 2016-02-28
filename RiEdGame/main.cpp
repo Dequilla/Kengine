@@ -12,6 +12,7 @@ int main()
 	int width = 1360;
 	int height = 768;
 	bool fullscreen = false;
+	bool verticalSync = false;
 
 	//	If the options-file is successfully read
 	//	Set values read from said file
@@ -21,11 +22,13 @@ int main()
 		width = options.getIntOptionAt("gamewidth");
 		height = options.getIntOptionAt("gameheight");
 		fullscreen = options.getBoolOptionAt("fullscreen");
+		verticalSync = options.getBoolOptionAt("verticalsync");
 	}
 
 	Kengine::Game game(width, height, fps, fullscreen);
 	
 	game.showSystemCursor(true);
+	game.setVerticalSync(verticalSync);
 
 	game.pushState(new GameStateOpeningScreen(&game));
 	game.gameLoop();

@@ -36,6 +36,7 @@ namespace Kengine
 		void handleEvents();
 
 		void showSystemCursor(bool show);
+		void setVerticalSync(bool verticalSync);
 
 		Game(int width = 640, int height = 360, int fps = 0, bool fullscreen = true);
 		~Game();
@@ -46,6 +47,7 @@ namespace Kengine
 		sf::Clock			m_clock;
 		sf::Time			m_elapsed;
 		
+		float				m_fps = 0.0f;
 		float				m_dt = 0.0f;
 		float				m_accumulator = 0.0f;
 		const float			m_timestep = 1.0f / 10.0f;

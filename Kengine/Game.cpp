@@ -40,11 +40,16 @@ namespace Kengine
 			this->m_elapsed = m_clock.getElapsedTime();
 			this->m_dt = m_elapsed.asSeconds();
 			this->m_clock.restart();
+			this->m_fps = (1.0f / this->m_dt);
+
+			std::cout <<  "FPS: " << m_fps << std::endl;
 
 			if (peekState() == nullptr) continue;
 			this->handleEvents(); //Window events and input
 			this->update(this->m_dt); //Game updates
-			this->draw(this->m_dt); //Handles all the drawing
+			this->draw(this->m_dt); //Handles all the drawing	
+			
+			
 		}
 	}
 
@@ -79,6 +84,11 @@ namespace Kengine
 		this->window.setMouseCursorVisible(show);
 	}
 
+	void Game::setVerticalSync(bool verticalSync)
+	{
+		window.setVerticalSyncEnabled(verticalSync);
+	}
+
 	Game::Game(int width, int height, int fps, bool fullscreen)
 	{
 		if (fullscreen == true)
@@ -98,8 +108,6 @@ namespace Kengine
 		{
 			//No fps limit
 		}*/
-		
-		window.setVerticalSyncEnabled(true);
 	}
 
 	Game::~Game()

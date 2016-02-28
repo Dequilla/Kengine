@@ -143,7 +143,7 @@ void Player::update(float dt)
 		this->m_velocityX = this->m_velocityX - this->m_accelerationX * (dt * 10.0f);
 	}
 
-	std::cout << "VelY: " << m_velocityY << " VelX: " << m_velocityX << " Acc X: " << this->m_accelerationX * (dt * 10.0f) << " Acc Y: " << this->m_accelerationY * (dt * 10.0f) << "  DT:  " << dt * 10.0f << std::endl;
+	//std::cout << "VelY: " << m_velocityY << " VelX: " << m_velocityX << " Acc X: " << this->m_accelerationX * (dt * 10.0f) << " Acc Y: " << this->m_accelerationY * (dt * 10.0f) << "  DT:  " << dt * 10.0f << std::endl;
 	
 	//Do not let it go any faster than max_velocity
 	if (m_velocityX > m_maxVelocityX)
