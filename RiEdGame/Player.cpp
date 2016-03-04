@@ -123,6 +123,10 @@ void Player::update(float dt)
 	if (m_movingUp == false && m_velocityY < 0.0f)
 	{
 		this->m_velocityY = this->m_velocityY + this->m_accelerationY * (dt * 10.0f);
+		if (m_velocityY > -(m_accelerationY * dt))
+		{
+			m_velocityY = 0.0;
+		}
 	}
 
 	//	DOWN
@@ -135,6 +139,10 @@ void Player::update(float dt)
 	if (m_movingLeft == false && m_velocityX < 0.0f)
 	{
 		this->m_velocityX = this->m_velocityX + this->m_accelerationX * (dt * 10.0f);
+		if (m_velocityX > -(m_accelerationX * dt))
+		{
+			m_velocityX = 0.0;
+		}
 	}
 
 	//	RIGHT
@@ -143,10 +151,10 @@ void Player::update(float dt)
 		this->m_velocityX = this->m_velocityX - this->m_accelerationX * (dt * 10.0f);
 	}
 
-	//std::cout << "VelY: " << m_velocityY << " VelX: " << m_velocityX << " Acc X: " << this->m_accelerationX * (dt * 10.0f) << " Acc Y: " << this->m_accelerationY * (dt * 10.0f) << "  DT:  " << dt * 10.0f << std::endl;
+	std::cout << "VelY: " << m_velocityY << " VelX: " << m_velocityX << " Acc X: " << this->m_accelerationX * (dt * 10.0f) << " Acc Y: " << this->m_accelerationY * (dt * 10.0f) << "  DT:  " << dt * 10.0f << std::endl;
 	
 	//Do not let it go any faster than max_velocity
-	if (m_velocityX > m_maxVelocityX)
+	/*if (m_velocityX > m_maxVelocityX)
 	{
 		m_velocityX = m_maxVelocityX;
 	}
@@ -163,7 +171,7 @@ void Player::update(float dt)
 	{
 		m_velocityY = m_maxVelocityY * -1.0f;
 	}
-
+	*/
 
 	this->m_sprite.move((this->m_velocityX * dt), (this->m_velocityY * dt));
 }

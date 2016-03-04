@@ -42,7 +42,7 @@ namespace Kengine
 			this->m_clock.restart();
 			this->m_fps = (1.0f / this->m_dt);
 
-			std::cout <<  "FPS: " << m_fps << std::endl;
+			//std::cout <<  "FPS: " << m_fps << std::endl;
 
 			if (peekState() == nullptr) continue;
 			this->handleEvents(); //Window events and input
