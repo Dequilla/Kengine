@@ -123,15 +123,19 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Button.cpp" />
+    <ClCompile Include="EventManager.cpp" />
     <ClCompile Include="Game.cpp" />
     <ClCompile Include="Kopter.cpp" />
+    <ClCompile Include="Textbox.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Button.h" />
+    <ClInclude Include="EventManager.h" />
     <ClInclude Include="Game.h" />
     <ClInclude Include="GameState.h" />
     <ClInclude Include="Kopter.h" />
     <ClInclude Include="ResourceManager.h" />
+    <ClInclude Include="Textbox.h" />
     <ClInclude Include="TextureManager.h" />
     <ClInclude Include="Utilities.h" />
   </ItemGroup>
